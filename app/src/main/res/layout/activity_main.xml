@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_rootlayout">
+    <include layout="@layout/custom_actionbar_chat"
+        android:id="@+id/toolbar"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/message_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8.8"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/ll_sendmesaage"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="14dp"
+        android:transcriptMode="alwaysScroll"
+        android:stackFromBottom="true"
+        android:background="@color/calendar_bg"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_sendmesaage"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:weightSum="3"
+        android:paddingRight="@dimen/_8sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+
+        <EditText
+            android:id="@+id/et_messagetext"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:background="@drawable/bg_chat"
+            android:layout_weight="3"
+            android:longClickable="false"
+            android:inputType="textCapSentences"
+            android:hint="Enter Your Text.."
+            android:textSize="14sp"/>
+
+
+
+        <ImageView
+            android:id="@+id/iv_attachments"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="0.3"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/ivsendmesaage"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_sendmesaage"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
